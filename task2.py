@@ -17,7 +17,7 @@ text = "Ядро Git представляет собой набор утилит
 
 punc_list = set('.;:!?/\\,#@$&)(\'"')
 
-now_punc_text = " "
+now_punc_text = ""
 for char in text:
     if char not in punc_list:
         now_punc_text += char
@@ -30,7 +30,9 @@ values = {x: words_list.count(x) for x in words_list}
 values = sorted(values.items(), key=lambda item: item[1], reverse=True)
 
 count = 10
+
+print('Кол-во  Слово')
 for i in values:
     if count > 0:
-        print(f"'{i[0]}' - {i[1]}")
+        print(f"{i[1]:>{6}}  {i[0]}")
         count -= 1
