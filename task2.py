@@ -17,14 +17,14 @@ text = "Ядро Git представляет собой набор утилит
 
 punc_list = set('.;:!?/\\,#@$&)(\'"')
 
-now_punc_text = ""
+no_punc_text = ""
 for char in text:
     if char not in punc_list:
-        now_punc_text += char
+        no_punc_text += char
     else:
-        now_punc_text += ''
+        no_punc_text += ''
 
-words_list = now_punc_text.split()
+words_list = no_punc_text.split()
 values = {x: words_list.count(x) for x in words_list}
 
 values = sorted(values.items(), key=lambda item: item[1], reverse=True)
